@@ -85,7 +85,7 @@ export const Skills: React.FC = () => {
   // カテゴリー別にスキルを分類
   const frontendSkills = skills.filter(s => s.category === 'frontend');
   const backendSkills = skills.filter(s => s.category === 'backend');
-  const databaseSkills = skills.filter(s => s.category === 'language');
+  const databaseSkills = skills.filter(s => s.category === 'database');
   const toolSkills = skills.filter(s => s.category === 'tool');
 
   return (

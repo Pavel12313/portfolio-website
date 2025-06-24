@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Star } from 'lucide-react';
+import { Github, Star, Code2, Globe } from 'lucide-react';
 import { Card } from '../Card';
 import { Button } from '../Button';
 import { Badge } from '../Badge';
@@ -28,11 +28,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       <Card hover className="group h-full flex flex-col overflow-hidden">
         {/* プロジェクト画像 */}
         <div className="relative h-56 -mx-6 -mt-6 overflow-hidden">
-          <LazyImage
-            src={project.imageUrl || '/api/placeholder/600/400'}
-            alt={project.title}
-            className="transition-all duration-500 group-hover:scale-110"
-          />
+          {project.imageUrl && !project.imageUrl.includes('placeholder') ? (
+            <LazyImage
+              src={project.imageUrl}
+              alt={project.title}
+              className="transition-all duration-500 group-hover:scale-110"
+            />
+          ) : (
+            <div className="h-full w-full bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-900 dark:to-black flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <div className="text-center p-6">
+                <div className="flex flex-wrap justify-center gap-3 mb-4">
+                  {project.technologies.slice(0, 3).map((tech, i) => (
+                    <div key={i} className="px-3 py-1 text-xs font-medium rounded-full bg-white/50 dark:bg-white/10 text-neutral-600 dark:text-neutral-300">
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+                <Code2 className="w-12 h-12 text-neutral-400 dark:text-neutral-700" />
+              </div>
+            </div>
+          )}
           
           {/* オーバーレイ */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -83,11 +98,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               <Button
                 variant="gradient"
                 size="sm"
-                className="w-full"
+                className={project.liveUrl ? 'flex-1' : 'w-full'}
                 onClick={() => window.open(project.githubUrl, '_blank')}
               >
                 <Github className="mr-1 h-3 w-3" />
                 GitHubで見る
+              </Button>
+            )}
+            {project.liveUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="flex-1"
+                onClick={() => window.open(project.liveUrl, '_blank')}
+              >
+                <Globe className="mr-1 h-3 w-3" />
+                ライブデモ
               </Button>
             )}
           </div>

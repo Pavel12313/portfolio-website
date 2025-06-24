@@ -10,5 +10,15 @@ export const projects: Project[] = [
     imageUrl: '/api/placeholder/600/400',
     githubUrl: 'https://github.com/Pavel12313/QuickDraw-Screenshot',
     featured: true
+  },
+  {
+    id: '2',
+    title: 'ポートフォリオWebサイト',
+    description: 'React 19とTypeScriptで構築したモダンなポートフォリオサイト。ダークモード、スムーズなアニメーション、レスポンシブデザインを実装。',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    imageUrl: '/api/placeholder/600/400',
+    githubUrl: 'https://github.com/Pavel12313/portfolio-website',
+    // liveUrl を削除 - ユーザーは既にこのサイトにいるため
+    featured: false
   }
 ];

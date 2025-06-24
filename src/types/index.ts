@@ -2,7 +2,7 @@
 export interface Skill {
   name: string;
   level: number; // 0-100
-  category: 'frontend' | 'backend' | 'language' | 'tool';
+  category: 'frontend' | 'backend' | 'database' | 'language' | 'tool';
 }
 
 // プロジェクトのタイプ定義

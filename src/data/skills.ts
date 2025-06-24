@@ -17,8 +17,7 @@ export const skills: Skill[] = [
   { name: 'Node.js', level: 75, category: 'backend' },
   
   // データベース
-  { name: 'MySQL', level: 80, category: 'language' },
-  { name: 'PostgreSQL', level: 70, category: 'language' },
+  { name: 'MySQL', level: 80, category: 'database' },
   
   // ツール
   { name: 'Git', level: 85, category: 'tool' },
