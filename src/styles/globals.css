@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2025年のモダンなタイポグラフィシステム */
+@layer base {
+  :root {
+    /* モダンな色彩システム - HIGH CONTRAST */
+    --color-primary: 124 58 237;
+    --color-primary-light: 167 139 250;
+    --color-primary-dark: 109 40 217;
+    
+    /* ニューモルフィックグラデーション - HIGH CONTRAST */
+    --color-accent: 168 85 247;
+    --color-accent-light: 196 181 253;
+    --color-accent-dark: 147 51 234;
+    
+    /* ニュートラルカラー */
+    --color-neutral-50: 250 250 250;
+    --color-neutral-100: 245 245 245;
+    --color-neutral-200: 229 229 229;
+    --color-neutral-300: 212 212 212;
+    --color-neutral-400: 163 163 163;
+    --color-neutral-500: 115 115 115;
+    --color-neutral-600: 82 82 82;
+    --color-neutral-700: 64 64 64;
+    --color-neutral-800: 38 38 38;
+    --color-neutral-900: 23 23 23;
+    --color-neutral-950: 10 10 10;
+    
+    /* セマンティックカラー */
+    --color-success: 34 197 94;
+    --color-warning: 251 146 60;
+    --color-error: 239 68 68;
+    --color-info: 59 130 246;
+    
+    /* タイポグラフィスケール - クランプ関数でレスポンシブ対応 */
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    --font-size-3xl: clamp(1.875rem, 1.5rem + 1.5vw, 2.25rem);
+    --font-size-4xl: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+    --font-size-5xl: clamp(3rem, 2.25rem + 3vw, 4rem);
+    --font-size-6xl: clamp(3.75rem, 2.75rem + 4vw, 5rem);
+    
+    /* 行間 */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    
+    /* 文字間隔 */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    
+    /* スペーシングシステム */
+    --spacing-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.375rem);
+    --spacing-sm: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+    --spacing-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    --spacing-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+    --spacing-xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+    --spacing-2xl: clamp(3rem, 2.4rem + 3vw, 4.5rem);
+    --spacing-3xl: clamp(4rem, 3.2rem + 4vw, 6rem);
+    
+    /* アニメーション */
+    --animation-fast: 150ms;
+    --animation-normal: 300ms;
+    --animation-slow: 500ms;
+    
+    /* イージング関数 */
+    --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* シャドウ */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --shadow-glow: 0 0 20px rgb(var(--color-primary) / 0.3);
+    
+    /* ボーダー半径 */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* ブラー効果 */
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 16px;
+    --blur-xl: 24px;
+  }
+  
+  /* ダークモードの色彩 - HIGH CONTRAST */
+  .dark {
+    --color-neutral-50: 0 0 0;
+    --color-neutral-100: 15 15 15;
+    --color-neutral-200: 26 26 26;
+    --color-neutral-300: 45 45 45;
+    --color-neutral-400: 82 82 82;
+    --color-neutral-500: 148 148 148;
+    --color-neutral-600: 190 190 190;
+    --color-neutral-700: 224 224 224;
+    --color-neutral-800: 240 240 240;
+    --color-neutral-900: 250 250 250;
+    --color-neutral-950: 255 255 255;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.8);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.9);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 1);
+    --shadow-glow: 0 0 30px rgb(var(--color-primary) / 0.3);
+  }
+  
+  /* ベースのフォント設定 */
+  html {
+    font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* フォーカス状態 */
+  *:focus {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+  
+  /* スクロールバーのスタイリング */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-neutral-100));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-neutral-400));
+    border-radius: var(--radius-full);
+    border: 3px solid rgb(var(--color-neutral-100));
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-neutral-500));
+  }
+  
+  .dark ::-webkit-scrollbar-track {
+    background: rgb(var(--color-neutral-900));
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-neutral-600));
+    border-color: rgb(var(--color-neutral-900));
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-neutral-500));
+  }
+}
+
+/* カスタムユーティリティクラス */
+@layer utilities {
+  /* グラデーションテキスト */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  /* グラスモーフィズム効果 */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+  
+  /* ニューモーフィズム効果 */
+  .neumorphic {
+    @apply bg-neutral-100 dark:bg-neutral-800;
+    box-shadow: 
+      8px 8px 16px rgb(0 0 0 / 0.1),
+      -8px -8px 16px rgb(255 255 255 / 0.1);
+  }
+  
+  .neumorphic-inset {
+    @apply bg-neutral-100 dark:bg-neutral-800;
+    box-shadow: 
+      inset 4px 4px 8px rgb(0 0 0 / 0.1),
+      inset -4px -4px 8px rgb(255 255 255 / 0.1);
+  }
+  
+  /* ノイズテクスチャ */
+  .noise {
+    position: relative;
+  }
+  
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  /* スムーズな出現アニメーション */
+  .animate-in {
+    animation: animate-in var(--animation-normal) var(--easing-default) forwards;
+  }
+  
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ホバーグロー効果 */
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    @apply shadow-glow;
+  }
+  
+  /* ベントボックスグリッド */
+  .bento-grid {
+    @apply grid gap-4 md:gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* モダンカード */
+  .modern-card {
+    @apply relative overflow-hidden rounded-2xl bg-white dark:bg-neutral-800 p-6 shadow-lg transition-all duration-300;
+  }
+  
+  .modern-card:hover {
+    @apply shadow-xl -translate-y-1;
+  }
+}
+
+/* フォントのインポート */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
